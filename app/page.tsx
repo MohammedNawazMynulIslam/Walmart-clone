@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="">
-  <div>
+  <div className="grid grid-cols-1 grid-flow-row-dense md:grid-cols-4 gap-6 m-6">
     <GridOption
     title= "Sweet gifts for less"
     image="https://links.papareact.com/1dy"
