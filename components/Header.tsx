@@ -16,11 +16,11 @@ const input = e.currentTarget.input.value
   }
   return (
     <header className='flex flex-col md:flex-row bg-walmart items-center px-10 py-7 space-x-5'>
-        <Link href={"/"} className='mb-5 md:mb-0'>
+        {/* <Link href={"/"} className='mb-5 md:mb-0'>
             <Image
-            src="http://i.imgur.com/5V4wehM.png" alt="logo" width={150} height={150}
+            src="" alt="logo" width={150} height={150}
             />
-        </Link>
+        </Link> */}
 
 {/* search bar */}
 <form onSubmit={ handleSubmit} className='flex items-center bg-white rounded-full w-full flex-1'>
