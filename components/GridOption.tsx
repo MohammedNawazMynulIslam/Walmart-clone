@@ -9,8 +9,9 @@ type Props={
 function GridOption({title,className,image}:Props){
     return(
         <Link href={{
-            pathname:"/search",
-            query: { q : title},
+            // pathname:"/search",
+            // query: { q : title},
+            pathname:'/Home',
         }}
         className={cn("grid-option relative",className)}
         >
