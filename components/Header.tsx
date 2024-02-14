@@ -1,5 +1,5 @@
 "use client"
-import exp from 'constants'
+
 import { Grid2X2, Heart, LayoutGrid, Search, ShoppingCart, User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'

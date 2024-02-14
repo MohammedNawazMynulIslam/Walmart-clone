@@ -1,6 +1,6 @@
 import { Result } from "@/typings/searchTypings";
 
-function fetchSearch(searchTerm:string) {
+async function fetchSearch(searchTerm:  string) {
     const username = process.env.OXYLABS_USERNAME;
     const password= process.env.OXYLABS_PASSWORD
 
@@ -14,21 +14,27 @@ const body = {
     geo_location : "United States",
     parse: true,
 };
-const response =  fetch('https://realtime.oxylabs.io/v1/queries', {
+try{
+const response = await  fetch('https://realtime.oxylabs.io/v1/queries', {
   method: 'post',
   body: JSON.stringify(body),
   headers: {
     'Content-Type': 'application/json',
     'Authorization': 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'),
   },
-}).then((res)=>res.json())
-.then((data)=>{
-    if(data.results.length===0) return;
-    const result : Result= data.result[0];
-    return result;
-})
-.catch((err)=>console.log(err));
-return response
-}
+});
+const data = await response.json();
 
+
+if(data.results && data.results.length>0){
+  const result : Result = data.result[0];
+  return result;
+}else{
+  return null;
+}
+} catch (error) {
+  console.log(error);
+  throw new Error("Failed to fetch search results");
+}
+}
 export default fetchSearch;

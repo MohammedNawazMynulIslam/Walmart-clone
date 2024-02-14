@@ -32,7 +32,7 @@ export interface Organic {
     seller: Seller;
     product_id: string;
     badge? : string;
-    variants?: Variants[];
+    variants?: Variant[];
 }
 
 export interface Price{
@@ -75,7 +75,7 @@ export interface Job{
     geo_location: null | string;
     id: string;
     limit: number;
-    local: null | string;
+    locale: null | string;
     pages:  number;
     parse: boolean;
     parser_type: null | string;
